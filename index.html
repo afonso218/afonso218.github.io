@@ -1,1 +1,177 @@
-Hello :D
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricardo António - Software Engineer</title>
+    <style>
+        html, body {
+            height: 100%; /* Ensure body takes full height */
+            margin: 0; /* Remove default margin */
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #fff;
+        }
+        header p {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #ddd;
+        }
+        nav {
+            background-color: #fff;
+            border-bottom: 2px solid #ddd;
+            padding: 0.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border-bottom: 2px solid #ddd;
+        }
+        .tabs li {
+            margin: 0;
+        }
+        .tabs li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.75rem 1.5rem;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .tabs li a.active, .tabs li a:hover {
+            color: #fff;
+            background-color: #555;
+            border-radius: 4px;
+        }
+        .tab-content {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, visibility 0s ease-in-out 0.5s;
+            position: absolute;
+            width: 100%;
+        }
+        .tab-content.active {
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+            position: relative;
+        }
+        .container {
+            flex: 1; /* Allows the container to grow and fill space */
+            width: 80%;
+            margin: 0 auto;
+            padding: 2rem 0;
+            position: relative;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        a {
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #333;
+        }
+        a:hover {
+            color: #555;
+            border-bottom: 1px solid #555;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ricardo António</h1>
+        <p>Software Engineer 👨‍💻</p>
+    </header>
+
+    <nav>
+        <ul class="tabs">
+            <li><a href="#about" class="tab-link active">🧑‍💼 About Me</a></li>
+            <li><a href="#portfolio" class="tab-link">💼 Portfolio</a></li>
+            <li><a href="#contact" class="tab-link">📬 Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div id="about" class="tab-content active">
+            <h2>About Me</h2>
+            <p>Hello! I’m Ricardo António, a passionate software engineer with experience in developing innovative solutions and software applications. I specialize in [insert specialties or technologies, e.g., web development, mobile apps, etc.] and enjoy tackling complex problems to build efficient and scalable systems.</p>
+        </div>
+
+        <div id="portfolio" class="tab-content">
+            <h2>Portfolio</h2>
+            <p>Here are a few projects I’ve worked on:</p>
+            <ul>
+                <li><a href="[insert project link]" target="_blank">Project 1 🚀</a> - Brief description of the project.</li>
+                <li><a href="[insert project link]" target="_blank">Project 2 🛠️</a> - Brief description of the project.</li>
+                <li><a href="[insert project link]" target="_blank">Project 3 📊</a> - Brief description of the project.</li>
+            </ul>
+        </div>
+
+        <div id="contact" class="tab-content">
+            <h2>Contact</h2>
+            <p>If you’d like to get in touch, you can reach me at:</p>
+            <ul>
+                <li><a href="mailto:afonso218@gmail.com">Email ✉️</a></li>
+                <li><a href="https://www.linkedin.com/in/afonso218/" target="_blank">LinkedIn Profile 🔗</a></li>
+                <li><a href="https://github.com/afonso218" target="_blank">GitHub Profile 🧑‍💻</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Ricardo António. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab-link');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    // Remove active class from all tabs and contents
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    // Add active class to clicked tab and corresponding content
+                    tab.classList.add('active');
+                    const target = document.querySelector(tab.getAttribute('href'));
+                    target.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
